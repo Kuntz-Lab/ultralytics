@@ -177,3 +177,4 @@ calibration_*.npy
 
 medvision_dataset/*
 *.zip
+tmp/*

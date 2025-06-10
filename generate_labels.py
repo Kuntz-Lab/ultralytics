@@ -232,7 +232,7 @@ def convert_json_to_yolo_labels(json_path, output_dir, dataset_type='train'):#, 
 
 if __name__ == "__main__":
     # Example usage
-    json_path = "./medvision_dataset/annotations/medtool_anns.json"
+    json_path = "./tmp/medtool_anns.json"
     output_dir = "./tmp"
     # img_source_dir = "./med_data/images"  # Directory containing source images
 
@@ -247,21 +247,21 @@ if __name__ == "__main__":
     print("\n=== Processing Training Data ===")
     convert_json_to_yolo_labels(json_path, output_dir, 'train')
     
-    # Convert validation annotations
-    val_json_path = "./med_data/medtool_val_anns.json"
-    if os.path.exists(val_json_path):
-        print("\n=== Processing Validation Data ===")
-        convert_json_to_yolo_labels(val_json_path, output_dir, 'val')#, img_source_dir)
-    else:
-        print(f"\nWarning: Validation JSON {val_json_path} not found. Skipping.")
+    # # Convert validation annotations
+    # val_json_path = "./tmp/medtool_val_anns.json"
+    # if os.path.exists(val_json_path):
+    #     print("\n=== Processing Validation Data ===")
+    #     convert_json_to_yolo_labels(val_json_path, output_dir, 'val')#, img_source_dir)
+    # else:
+    #     print(f"\nWarning: Validation JSON {val_json_path} not found. Skipping.")
     
-    # Convert test annotations (if available)
-    test_json_path = "./med_data/medtool_val_anns.json"  # Often reusing validation set
-    if os.path.exists(test_json_path):
-        print("\n=== Processing Test Data ===")
-        convert_json_to_yolo_labels(test_json_path, output_dir, 'test') #, img_source_dir)
-    else:
-        print(f"\nWarning: Test JSON {test_json_path} not found. Skipping.")
+    # # Convert test annotations (if available)
+    # test_json_path = "./med_data/medtool_val_anns.json"  # Often reusing validation set
+    # if os.path.exists(test_json_path):
+    #     print("\n=== Processing Test Data ===")
+    #     convert_json_to_yolo_labels(test_json_path, output_dir, 'test') #, img_source_dir)
+    # else:
+    #     print(f"\nWarning: Test JSON {test_json_path} not found. Skipping.")
 
-    print("\nProcessing complete! YOLO format dataset created at:", output_dir)
+    # print("\nProcessing complete! YOLO format dataset created at:", output_dir)
 

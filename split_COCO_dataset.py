@@ -77,13 +77,13 @@ if __name__=="__main__":
     """
 
     # Path to your original COCO dataset JSON file
-    json_file_path = './med_data/medtool_anns.json'
+    json_file_path = './medvision_dataset/annotations/medtool_anns.json'
 
-    old_img_dir_path = './med_data/medvision_images/'
+    old_img_dir_path = './tmp/medvision_images/'
 
     # Directories to save the split datasets
-    train_dir = 'med_data/train'
-    val_dir = 'med_data/val'
+    train_dir = 'tmp/train'
+    val_dir = 'tmp/val'
 
     # Split the dataset by category and move images
     split_coco_dataset_by_category(json_file_path, old_img_dir_path, train_dir, val_dir)
